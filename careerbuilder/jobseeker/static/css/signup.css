@@ -1,0 +1,26 @@
+
+.signup{
+            border: solid 1px;
+            margin-top: 100px;
+            height: 500px;
+            padding-left: 50px;
+            
+        }
+      h1{
+            text-align: center;
+        }
+        button:hover{
+            background-color: #3633FF;
+        }
+        input{
+            width: 400px;
+        }
+    
+        td{
+            padding-bottom: 18px;
+            color: #fff;
+        }
+        .butn{
+            float: right;
+
+        }

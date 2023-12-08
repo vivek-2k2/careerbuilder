@@ -1,0 +1,19 @@
+.b1{
+    color: white;
+    background-color: brown;
+    margin-top: 200px;
+    margin-left: 300px;
+}
+.row{
+    height: 800px;
+}
+.blockquote{
+    color: white;
+    margin-top: 300px;
+    margin-left: 150px;
+  }
+  .blockquote-footer{
+    color: white;
+    margin-left: 500px;
+  }
+  

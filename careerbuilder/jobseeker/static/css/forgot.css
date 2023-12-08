@@ -1,0 +1,17 @@
+h5{
+    padding: 10px;
+}
+.forgot{
+    border: 1px solid blue;
+    width: 350px;
+    height: 300px;
+    margin-left: 600px;
+    margin-top: 150px;
+}
+button{
+    height: 30px;
+    background-color: blue;
+    margin-left: 200px;
+    border-radius: 2px;
+}
+
