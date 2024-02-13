@@ -1,0 +1,22 @@
+
+.login{
+   margin-top: 100px;
+   width: 500px;
+   margin-left: 150px;
+}
+h1{
+   text-align: center;
+}
+td{
+   padding: 10px;
+   padding-left: 10px;
+}
+table{
+   width: 100%;
+}
+a{
+   text-decoration: none;
+}
+.butn{
+   float: right;
+}

@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+  <nav class="navbar bg-dark border-bottom border-body navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'jobseeker:home' %}">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'jobseeker:signup' %}">Sign UP</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Already have an account?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'jobseeker:login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'jobseeker:about' %}">About Us</a>
+            </li> 
+          </ul>
+
+          <ol class="nav-item dropdown text-white">
+            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Recruiters</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'companys:signup' %}">Sign up</a></li>
+              <li><a class="dropdown-item" href="{% url 'companys:login' %}">Login</a></li>
+            </ul>
+          </ol>
+  
+
+
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  
+    <div class="row" style="background-image: url(https://images.unsplash.com/photo-1513297887119-d46091b24bfa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNocmlzdG1hc3xlbnwwfHwwfHx8MA%3D%3D);">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <figure>
+          <blockquote class="blockquote">
+            <p> The Journey of a thousand miles begins with a single step.</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            Lao Tzu
+          </figcaption>
+        </figure>
+        <a href="{% url 'jobseeker:dashboard' %}">  <button class="b1">Explore>>></button></a>
+      </div>
+      <div class="col-3"></div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</html>

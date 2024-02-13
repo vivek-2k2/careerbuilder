@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/applied.css' %}">
+<style>
+    th{
+        padding: 10px;
+        border: 1px solid black;
+}
+    
+    td{
+    padding: 10px;
+    border: 1px solid black;
+}
+
+</style>
+</head>
+<body>
+    <div class="row">
+        <h3>Applied Candidates</h3>
+    </div>
+    <br><br>
+<div class="row">
+    <div class="col-3"></div>
+     <div class="col-6">
+        <table border="2px">
+          <tr>
+            <th>Name</th>
+            <th>D.O.B</th>
+            <th>Email</th>
+            <th>Mobile no</th>
+            <th>Qualification</th>
+            <th>cv</th>
+         </tr>
+            {% for i in  application %}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.dob}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.mob}}</td>
+                <td>{{i.quali}}</td>
+                <!-- <td><a href=""></a></td>
+                <td>    
+                    <p><a href="{{resume.cv.url}}" target="_blank">view cv</a></p>
+                </td> -->
+                <td><p><a href="{{i.cv.url}}" target="_blank">view cv</a></p></td>
+            </tr>
+            {% endfor %}
+      </table>
+     </div>
+     <div class="col-3"></div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>    
+</body>
+</html>
