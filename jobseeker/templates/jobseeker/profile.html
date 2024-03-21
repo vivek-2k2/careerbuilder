@@ -14,6 +14,7 @@
         }
         a{
             text-decoration: none;
+            color: black;
         }
         /* .btn-success{
                 float: right;
@@ -28,7 +29,7 @@
 <body>
 <div class="container-fluid">
     <div class="row" style="border: 2px solid greenyellow;">
-        <div class="col-3"><p><img src="{% static 'images/gprofile.jpg' %}" alt=""><b>Profile</b></p> </div>
+        <div class="col-3"><p><img src="{% static 'images/gprofile.jpg' %}" alt=""><b>{{user.name}}</b></p> </div>
     
     <div class="col-8"></div>
         <div class="col-1"><button type="button" class="btn btn-success"><a class="text-white" href="{% url 'jobseeker:jlogout' %}"  >Log out</a></button></div>
@@ -37,7 +38,7 @@
     <div class="row">
     <div class="col-3"></div>
     <div class="col-6">
-           <h5>Applied status</h5>
+           <h5><a href="{% url 'jobseeker:status' %}">Applied status</a></h5>
     </div>
     <div class="col-3">
      <h5><a class="text-black" href="{% url 'jobseeker:about' %}">Help</a></h5>
@@ -46,7 +47,7 @@
 <br><br><br>
 <div class="row">
     <div class="col-3"></div>
-    <div class="col-6"><h4>For current job opportunities click the <a href="{% url 'jobseeker:dashboard' %}">link</a></h4></div>
+    <div class="col-6"><h4>For current job opportunities click the <a style="color: blue;" href="{% url 'jobseeker:dashboard' %}">link</a></h4></div>
     <div class="col-3"></div>
 </div>
 </div>

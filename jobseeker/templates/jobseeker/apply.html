@@ -26,14 +26,14 @@
         <div class="col-6">
          
             <div class="card">
-                <h5 class="card-header">company name</h5>
+                <h5 class="card-header">{{hire.company_name}}</h5>
                 <div class="card-body">
                   <h5>Job type:{{hire.job}}</h5>
                   <p>Qualification:{{hire.quali}}</p>
                   <p>Experience:{{hire.exp}}</p>
                   <p>Places:{{hire.places}}</p>
                   <p>Skills:{{hire.skills}}</p>
-                  <button type="button" class="btn btn-primary"><a href="{% url 'jobseeker:form' %}">Apply</a></button>
+                  <button type="button" class="btn btn-primary"><a href="{% url 'jobseeker:form' hire.id %}">Apply</a></button>
                 </div>
         <div class="col-3"></div>
     </div>

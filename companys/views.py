@@ -37,25 +37,34 @@ def forgot(request):
 def hiring(request):
     if 'company' in request.session:
      
+        company_id=request.session.get('company')
+        company_name=Companys.objects.get(id=company_id)
         if request.method=='POST':
           job=request.POST['job']
           quali=request.POST['quali']
           exp=request.POST['exp']
           places=request.POST['places']
           skills=request.POST['skills']
-          hire=Hiring(job=job,quali=quali,exp=exp,places=places,skills=skills)
+          company_name_=company_name
+          hire=Hiring(job=job,quali=quali,exp=exp,places=places,skills=skills,company_name=company_name_)
           hire.save()
           # return JsonResponse({'message':'Successfully added'})
           return redirect('companys:cview')
         else:
-          return render(request,'companys/hiring.html')
+          return render(request,'companys/hiring.html',{'company_name':company_name})
     else:
+       
        return render(request,'jobseeker/home.html')  
 def cview(request):
-      data=Hiring.objects.all()
-      return render(request,'companys/cview.html',{'hiring':data})
+      if 'company' in request.session:
+        company_id=request.session.get('company')
+        company_name=Companys.objects.get(id=company_id)
+        data=Hiring.objects.filter(company_name=company_name)
+        return render(request,'companys/cview.html',{'hiring':data})
 def update(request,hid):
       if 'company' in request.session:
+          company_id=request.session.get('company')
+          company_name=Companys.objects.get(id=company_id)
           hiringobj=Hiring.objects.get(id=hid)
           if request.method=='POST':
              job=request.POST['job']
@@ -68,6 +77,7 @@ def update(request,hid):
              hiringobj.exp=experience
              hiringobj.places=places
              hiringobj.skills=skills
+             hiringobj.company_name=company_name
              hiringobj.save()
              return redirect('companys:cview')
      
@@ -83,7 +93,10 @@ def deletecomp(request,hid):
 
 def applied(request):
      if 'company' in request.session:
-         seeker=Apply.objects.all()
+         company_id=request.session.get('company')
+         company_name=Companys.objects.get(id=company_id)
+         
+         seeker=Apply.objects.filter(company_name=company_name)
          return render(request,'companys/applied.html',{'application':seeker})
      else:
           return render(request,'jobseeker/home.html')

@@ -34,7 +34,7 @@ img{
     <div class="col-11">
    <a href="{% url 'jobseeker:home' %}"><button class="back">back</button></a>
    </div>
-   <div class="col-1"><img src="{% static 'images/gprofile.jpg' %} " alt=""><br><a href="{% url 'jobseeker:profile' %}">Profile</a> </div>
+   <div class="col-1"><img src="{% static 'images/gprofile.jpg' %} " alt=""><br><a href="{% url 'jobseeker:profile' %}">profile</a> </div>
 
       <br><br><br>
     </div>
@@ -46,7 +46,7 @@ img{
         <div class="col-6">
          
             <div class="card">
-                <h5 class="card-header">company name</h5>
+                <h5 class="card-header">{{i.company_name}}</h5>
                 <div class="card-body">
                   <h5 class="card-title">{{i.job}} <a href="{% url 'jobseeker:apply' i.id %}" class="btn btn-primary">Apply now</a></h5>
                   <p class="card-text">{{i.quali}}</p>
@@ -55,91 +55,8 @@ img{
                   <!-- <p class="card-text">{{i.skills}}</p> -->
                 </div>
               </div>
-<!--             
-                 <br>
-
-              <div class="card">
-                <h5 class="card-header">company name</h5>
-                <div class="card-body">
-                  <h5 class="card-title"> Front end <a href="#" class="btn btn-primary">Apply now</a></h5>
-                  <p class="card-text">Tamilnadu/coimbatore <br> 3-5yr</p>
-                </div>
-              </div>
-
-              <br>
-
-              <div class="card">
-                <h5 class="card-header">company name</h5>
-                <div class="card-body">
-                  <h5 class="card-title">Data Analyst  <a href="#" class="btn btn-primary">Apply now</a></h5>
-                  <p class="card-text">Banglore/coimbatore<br> 0-3yr</p>
-                </div>
-              </div>
-
-              <br>
-
-              <div class="card">
-                <h5 class="card-header">company name</h5>
-                <div class="card-body">
-                  <h5 class="card-title">Digital marketing <a href="#" class="btn btn-primary">Apply now</a></h5>
-                  <p class="card-text">cochin <br> 5-10yr</p>
-                </div>
-              </div>
-
-              <br>
-
-              <div class="card">
-                <h5 class="card-header">company name</h5>
-                <div class="card-body">
-                  <h5 class="card-title">python full stack developer  <a href="#" class="btn btn-primary">Apply now</a></h5>
-                  <p class="card-text">coimbatore/cochin <br> 0-1yr</p>
-                </div>
-              </div>
-
-              <br>
-
-              <div class="card">
-                <h5 class="card-header">company name</h5>
-                <div class="card-body">
-                  <h5 class="card-title">Data Analyst  <a href="#" class="btn btn-primary">Apply now</a></h5>
-                  <p class="card-text">Maharashtra/pune<br> 1-5yr</p>
-                </div>
-              </div>
-              <br>
-
-              <div class="card">
-                <h5 class="card-header">company name</h5>
-                <div class="card-body">
-                  <h5 class="card-title"> front end <a href="#" class="btn btn-primary">Apply now</a></h5>
-                  <p class="card-text">Banglore/coimbatore <br> 0-5yr</p>
-                </div>
-              </div>
-
-              <br>
-
-              <div class="card">
-                <h5 class="card-header">company name</h5>
-                <div class="card-body">
-                  <h5 class="card-title">Data Analyst <a href="#" class="btn btn-primary">Apply now</a></h5>
-                  <p class="card-text">Thiruvananthapuram <br> 0-1yr</p>
-                </div>
-              </div>
-              <br>
-              <div class="card">
-                <h5 class="card-header">company name</h5>
-                <div class="card-body">
-                  <h5 class="card-title">back end <a href="#" class="btn btn-primary">Apply now</a></h5>
-                  <p class="card-text">calicut <br> 5-15yr</p>
-                </div>
-              </div>
-              <br>
-              <div class="card">
-                <h5 class="card-header">company name</h5>
-                <div class="card-body">
-                  <h5 class="card-title">python full stack developer  <a href="#" class="btn btn-primary">Apply now</a></h5>
-                  <p class="card-text">cochi/calicut <br> 0-1yr</p>
-                </div>
-              </div> -->
+          
+   
               </div>
         <div class="col-3"></div>
     </div>

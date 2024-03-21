@@ -34,9 +34,8 @@ def login(request):
 def home(request):
     return render(request,'jobseeker/home.html')
 def dashboard(request):
-    
-    data=Hiring.objects.all()
-    return render(request,'jobseeker/dashboard.html',{'hiring':data})
+     data=Hiring.objects.all()
+     return render(request,'jobseeker/dashboard.html',{'hiring':data})
 def forgot(request):
     return render(request,'jobseeker/forgot.html')
 def about(request):
@@ -47,25 +46,38 @@ def apply(request,hid):
      return render(request,'jobseeker/apply.html',{'hire':hiringobj})
    else:
         return render(request,'jobseeker/login.html')
-def form(request):
+def form(request,hireid):
     if 'jobsee' in request.session:
+      user_id=request.session.get('jobsee')
+      user=Jobseeker.objects.get(id=user_id)
+      
+      position=Hiring.objects.get(id=hireid)
+      
+      job=position.job
       if request.method=='POST':
+        
+        
+
         name=request.POST['name']
         dob=request.POST['dob']
         email=request.POST['email']
         mob=request.POST['mob']
         quali=request.POST['quali']
         cv=request.FILES['cv']
-        apply=Apply(name=name,dob=dob,email=email,mob=mob,quali=quali,cv=cv)
+      
+        company=position.company_name
+        apply=Apply(name=name,dob=dob,email=email,mob=mob,quali=quali,cv=cv,company_name=company,job=job,applicant=user)
         apply.save()
         return redirect('jobseeker:dashboard')  
-      return render(request,'jobseeker/form.html')
+      return render(request,'jobseeker/form.html',{'user':user,'position':position})
     else:
      return render(request,'jobseeker/home.html')
 
 def profile(request):
   if 'jobsee' in request.session:
-    return render(request,'jobseeker/profile.html')
+    user_id=request.session.get('jobsee')
+    user=Jobseeker.objects.get(id=user_id)  
+    return render(request,'jobseeker/profile.html',{'user':user})
   else:
     return render(request,'jobseeker/login.html')
 def jlogout(request):
@@ -75,7 +87,13 @@ def jlogout(request):
      else:
          return render(request,'jobseeker/home.html')
 def status(request):
-        job=Apply.objects.all()
-   
-
-        return render(request,'jobseeker/status.html')
+        if 'jobsee' in request.session:
+          user_id=request.session.get('jobsee')
+          user=Jobseeker.objects.get(id=user_id)
+          applied_jobs=Apply.objects.filter(applicant=user)
+          
+          
+          
+          
+          
+          return render(request,'jobseeker/status.html',{'user':user,'applied_jobs':applied_jobs})
