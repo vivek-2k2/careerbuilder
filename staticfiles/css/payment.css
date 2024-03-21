@@ -1,0 +1,23 @@
+h1{
+    text-align: center;
+}
+  input{
+  border-radius: 10px;
+  width: 300px;
+  height: 30px;
+   }
+   img{
+      width: 150px;
+      height: 30px;
+   }
+   button{
+    float: right;
+    margin-top: 250px;
+    margin-right: 50px; 
+   }
+   .col-6{
+    margin-top: 100px;
+    border: solid 1px black;
+    padding-left: 200px;
+    height: 300px;
+   }

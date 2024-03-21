@@ -1,0 +1,10 @@
+input[type='text']{
+    border-radius: 20px;
+    text-align: center;
+}
+td{
+    padding-top: 50px;
+}
+.btn{
+    float: right;
+}
